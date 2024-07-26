@@ -1,0 +1,22 @@
+list
+def find_second_largest(numbers):
+    if len(numbers) < 2:
+        raise ValueError("List must contain at least two elements")
+
+    first = second = float('-inf')
+
+    for number in numbers:
+        if number > first:
+            second = first
+            first = number
+        elif number > second and number < first:
+            second = number
+
+    if second == float('-inf'):
+        raise ValueError("No second largest number found (all elements might be the same)")
+    
+    return second
+
+# Example usage
+if __name__ == "__main__":
+    numbers = [10, 20, 4, 45, 99,

@@ -1,0 +1,45 @@
+Write a Python program to find the maximum and minimum values in a tuple.
+
+
+def find_max_min(t):
+    if not t:
+        raise ValueError("Tuple is empty")
+    
+    max_value = max(t)
+    min_value = min(t)
+    
+    return max_value, min_value
+
+# Example usage
+if __name__ == "__main__":
+    t = (10, 20, 4, 45, 99, 1)
+    try:
+        max_value, min_value = find_max_min(t)
+        print("Maximum value:", max_value)
+        print("Minimum value:", min_value)
+    except ValueError as e:
+     
+
+Write a Python program to convert a tuple to a string.
+
+def tuple_to_string(t):
+    return ', '.join(map(str, t))
+
+# Example usage
+if __name__ == "__main__":
+    t = (10, 'apple', 3.14, True)
+    result = tuple_to_string(t)
+    print("Tuple as string:", result)
+
+
+Write a Python program to reverse a tuple.
+
+def reverse_tuple(t):
+    return t[::-1]
+
+# Example usage
+if __name__ == "__main__":
+    t = (10, 20, 30, 40, 50)
+    reversed_t = reverse_tuple(t)
+    print("Original tuple:", t)
+    print("Reversed tuple:", reversed_t)

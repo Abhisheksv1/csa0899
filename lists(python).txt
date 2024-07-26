@@ -1,0 +1,55 @@
+Write a Python program to find the second largest number in a list.
+
+def find_second_largest(numbers):
+    if len(numbers) < 2:
+        raise ValueError("List must contain at least two elements")
+
+    first = second = float('-inf')
+
+    for number in numbers:
+        if number > first:
+            second = first
+            first = number
+        elif number > second and number < first:
+            second = number
+
+    if second == float('-inf'):
+        raise ValueError("No second largest number found (all elements might be the same)")
+    
+    return second
+
+# Example usage
+if __name__ == "__main__":
+    numbers = [10, 20, 4, 45, 99, 99, 98]
+    try:
+        result = find_second_largest(numbers)
+        print("The second largest number is:", result)
+    except ValueError as e:
+        print(e)
+
+Write a Python program to remove duplicates from a list.
+
+def remove_duplicates_with_set(numbers):
+    return list(set(numbers))
+
+# Example usage
+if __name__ == "__main__":
+    numbers = [10, 20, 10, 30, 20, 40, 50, 40]
+    unique_numbers = remove_duplicates_with_set(numbers)
+    print("List with duplicates removed:", unique_numbers)
+
+
+Write a Python program to count the number of occurrences of each element in a list.
+
+
+from collections import Counter
+
+def count_occurrences(numbers):
+    return Counter(numbers)
+
+# Example usage
+if __name__ == "__main__":
+    numbers = [10, 20, 10, 30, 20, 40, 50, 40, 10]
+    occurrences = count_occurrences(numbers)
+    print("Occurrences of each element:", occurrences)
+
